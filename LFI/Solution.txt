@@ -1,0 +1,3 @@
+php://filter/convert.base64-encode/resource=
+
+https://github.com/synacktiv/php_filter_chain_generator.git
