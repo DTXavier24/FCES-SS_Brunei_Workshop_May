@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+ nginx:
+  build: ./Nginx
+  command: nginx -g "daemon off;"
+  container_name: app_nginx
+  ports:
+   - '5000:5000'
+ chal-0e:
+  build: ./0e
+  container_name: chal-0e
+  ports:
+   - "80:80"
+  volumes:
+    - ./0e/www:/var/www/html
+ chal-guessy:
+  build: ./Guessy
+  container_name: chal-guessy
+  ports:
+   - "81:80"
+  volumes:
+    - ./Guessy/www:/var/www/html
+ chal-overload:
+  build: ./Overload
+  container_name: chal-overload
+  ports:
+   - "82:80"
+ chal-i-love-php:
+  build: ./I_LOVE_PHP
+  container_name: chal-i-love-php
+  ports:
+   - "83:80"
+  volumes:
+    - ./I_LOVE_PHP/www:/var/www/html
+ chal-lfi:
+  build: ./LFI
+  container_name: chal-lfi
+  ports:
+   - "84:80"
+ chal-calculator:
+  build: ./Calculator
+  container_name: chal-calculator
+  ports:
+   - "85:80"
+  volumes:
+    - ./Calculator/www:/var/www/html
